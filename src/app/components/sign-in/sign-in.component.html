@@ -1,0 +1,35 @@
+<div class="container">
+    <mat-card class="signin-card">
+      <div class="logo">
+        <img src="assets/images/GoogleLogo.png" alt="Google logo">
+        <h1>Sign in</h1>
+        <p class="subtitle">
+            with your Google Account. This account will be available to other Google apps in the browser.
+          </p>
+      </div>
+      <div class="side-container">
+        <div class="email-forgot">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Email or Phone</mat-label>
+          <input matInput formControlName="email">
+        
+          <mat-error>Invalid Input</mat-error>
+        </mat-form-field> 
+        <a href="#" class="forgot-link">Forgot email?</a>  
+     </div>
+        <p class="guest-info">
+          Not your computer? Use Guest mode to sign in privately.
+          <br />
+          <a href="#">Learn more about using Guest mode</a>
+        </p>
+        <div class="actions">
+          <a href="../registration" class="create-link">Create account</a>
+          <!-- <a id="anchor" routerLink="../registration"  routerLinkActive="active">Create account</a> -->
+          <button mat-raised-button color="primary" type="submit">Next</button>
+        </div>
+    </div>
+    </mat-card>
+
+    
+  </div>
+  

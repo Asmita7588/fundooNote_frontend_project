@@ -1,0 +1,97 @@
+<form [formGroup]="registerForm" (ngSubmit)="onsubmit()">
+    <div class="container">
+      <div id="maindiv">
+        <div>
+            <span id="g">G</span>
+            <span id="o">o</span>
+            <span id="O">o</span>
+            <span id="g">g</span>
+            <span id="l">l</span>
+            <span id="e">e</span>
+        
+            <h1>Create your Google Account</h1>
+            </div>
+        <div class="flname">
+            <mat-form-field appearance="outline">
+                <mat-label>FirstName</mat-label>
+                <input matInput  formControlName="firstName" placeholder="firstName" />
+                <mat-icon matSuffix></mat-icon>
+                <mat-error>Invalid FirstName</mat-error>
+              </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Lastname</mat-label>
+              <input matInput  formControlName="lastName" placeholder="LastName" />
+              <mat-icon matSuffix></mat-icon>
+              <mat-error>Invalid LastName</mat-error>
+            </mat-form-field>
+          <!-- </div> -->
+        </div>
+        <div class="flname">
+            <mat-form-field>
+                <mat-label>Select Date Of birth</mat-label>
+                <mat-date-range-input [rangePicker]="picker">
+                  <input matStartDate formControlName="start" placeholder="Start date">
+                  <input matEndDate formControlName="end" placeholder="End date">
+                </mat-date-range-input>
+                <mat-hint></mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-date-range-picker #picker></mat-date-range-picker>
+              </mat-form-field>
+   
+        </div>
+        <div class="gender">
+          <mat-radio-group formControlName="gender" aria-label="Select an gender">
+          <mat-label>Gender</mat-label>
+          <mat-radio-button value="1">Male</mat-radio-button>
+          <mat-radio-button value="2">Female</mat-radio-button>
+        </mat-radio-group>
+      </div>
+    
+        <div class="email">
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" placeholder="email" />
+            <mat-error>Invalid Email</mat-error>
+            <mat-hint></mat-hint>
+          </mat-form-field>
+        </div>
+        
+    
+        <div>
+          <h4 style="color: blue">Create a new Gmail address instead</h4>
+        </div>
+    
+        <div class="pass">
+            <mat-form-field appearance="outline">
+              <mat-label>Password</mat-label>
+              <input matInput formControlName="password" [type]="showpassword ? 'text' : 'password'" placeholder="Password" />
+              <mat-icon matSuffix></mat-icon>
+              <mat-hint> Use 8 or more characters </mat-hint>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>ConfirmPassword</mat-label>
+                <input matInput formControlName="confirmPassword" [type]="showpassword ? 'text' : 'password'" placeholder="confirmPassword" />
+                <mat-icon matSuffix></mat-icon>
+                <mat-hint> Use 8 or more characters </mat-hint>
+              </mat-form-field>
+          </div>
+        <div>
+          <section class="example-section">
+            <mat-checkbox (click)='showhidepassword()' class="example-margin">Show Password </mat-checkbox>
+          </section>
+        </div>
+    
+        <div class="info">
+          <div>
+            <a id="anchor" routerLink="../signin"  routerLinkActive="active">Sign in instead</a>
+            
+          </div>
+          <div>
+            <button mat-raised-button color="primary">Next</button>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    </form>
+    
