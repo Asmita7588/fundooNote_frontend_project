@@ -20,30 +20,26 @@
               </mat-form-field>
             <mat-form-field appearance="outline">
               <mat-label>Lastname</mat-label>
-              <input matInput  formControlName="lastName" placeholder="LastName" />
+              <input matInput  formControlName="lastName" placeholder="lastName" />
               <mat-icon matSuffix></mat-icon>
               <mat-error>Invalid LastName</mat-error>
             </mat-form-field>
           <!-- </div> -->
         </div>
         <div class="flname">
-            <mat-form-field>
-                <mat-label>Select Date Of birth</mat-label>
-                <mat-date-range-input [rangePicker]="picker">
-                  <input matStartDate formControlName="start" placeholder="Start date">
-                  <input matEndDate formControlName="end" placeholder="End date">
-                </mat-date-range-input>
-                <mat-hint></mat-hint>
-                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-date-range-picker #picker></mat-date-range-picker>
-              </mat-form-field>
-   
+          <mat-form-field>
+            <mat-label>Select Date Of birth</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="dob" placeholder="dob">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
         </div>
         <div class="gender">
           <mat-radio-group formControlName="gender" aria-label="Select an gender">
           <mat-label>Gender</mat-label>
-          <mat-radio-button value="1">Male</mat-radio-button>
-          <mat-radio-button value="2">Female</mat-radio-button>
+          <mat-radio-button value="Male">Male</mat-radio-button>
+          <mat-radio-button value="Female">Female</mat-radio-button>
         </mat-radio-group>
       </div>
     
@@ -74,6 +70,9 @@
                 <mat-icon matSuffix></mat-icon>
                 <mat-hint> Use 8 or more characters </mat-hint>
               </mat-form-field>
+              <div  class="pass-text" *ngIf="registerForm.hasError('passwordMismatch') && registerForm.get('confirmPassword')?.touched">
+                <small class="text-danger">Passwords do not match.</small>
+              </div>
           </div>
         <div>
           <section class="example-section">
@@ -87,7 +86,7 @@
             
           </div>
           <div>
-            <button mat-raised-button color="primary">Next</button>
+            <button mat-raised-button color="primary" [disabled]="registerForm.invalid">Next</button>
           </div>
         </div>
       </div>
