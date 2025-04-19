@@ -29,7 +29,7 @@ export class RegistrationComponent implements OnInit{
             dob:['', Validators.required],
             email: ['', [Validators.required, Validators.email]],
             gender:['',[Validators.required]],
-            password: ['', [Validators.required, Validators.minLength(6), Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$')]],
+            password: ['', [Validators.required, Validators.minLength(6)]],
             confirmPassword: ['', Validators.required],
           },{
             validators: this.matchPassword('password', 'confirmPassword')  
