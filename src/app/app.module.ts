@@ -17,6 +17,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
 import { SignInComponent } from './components/sign-in/sign-in.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 
@@ -50,6 +51,7 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
     MatDatepickerModule,
     MatCheckboxModule,
     MatRadioModule,
+    MatSnackBarModule
    
     
   ],
