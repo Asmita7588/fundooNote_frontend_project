@@ -16,13 +16,21 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatCardModule} from '@angular/material/card';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatListModule } from '@angular/material/list';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { CreateNoteComponent } from './components/create-note/create-note.component';
+
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    routingComponenets
+    routingComponenets,
+    DashboardComponent,
+    CreateNoteComponent
   ],
   imports: [
     BrowserModule,
@@ -40,8 +48,11 @@ import {MatCardModule} from '@angular/material/card';
     MatCheckboxModule,
     MatRadioModule,
     MatSnackBarModule,
-    MatCardModule
-   
+    MatCardModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+  
     
   ],
   providers: [],

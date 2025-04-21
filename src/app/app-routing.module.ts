@@ -2,13 +2,19 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { AuthGuardService } from './services/auth-guard/auth-guard.service';
+import { CreateNoteComponent } from './components/create-note/create-note.component';
 
 
 const routes: Routes = [
   {path: 'signup', component:RegistrationComponent},
-  {path: '', component:SignInComponent}
+  {path: '', component:SignInComponent},
+  {path : 'dashboard', component:DashboardComponent, canActivate:[AuthGuardService],
+    children:[{path: 'notes',component:CreateNoteComponent} ]
+  }
     
-];
+]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

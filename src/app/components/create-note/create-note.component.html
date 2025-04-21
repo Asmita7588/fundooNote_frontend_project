@@ -1,0 +1,64 @@
+<div class="a" >
+    <div class="container"  >
+      <div *ngIf="!show || show" class="subcontainer1">
+        <span *ngIf="!show" (click)="showHide()">Take a note...</span>
+  
+        <div class="outerlogo">
+          <span
+            *ngIf="!show"
+            (click)="showHide()"
+            class="material-symbols-outlined upIcon"
+          >
+            check_box
+          </span>
+          <span
+            *ngIf="!show"
+            (click)="showHide()"
+            class="material-symbols-outlined upIcon"
+          >
+            brush
+          </span>
+          <span
+            *ngIf="!show"
+            (click)="showHide()"
+            class="material-symbols-outlined upIcon"
+          >
+            photo
+          </span>
+        </div>
+        <input
+          id="title"
+          *ngIf="show"
+          class="subcontainer2"
+          type="text"
+          placeholder="Title"
+          [(ngModel)]="title"
+        />
+        <span id="pin" *ngIf="show" (click)="showHide()" class="material-symbols-outlined">
+          push_pin
+        </span>
+      </div>
+      <div *ngIf="show" class="subcontainer1">
+        <input
+          class="subcontainer2"
+          type="text"
+          [(ngModel)]="note"
+          placeholder="Take a note..."
+        />
+      </div>
+      <div class="lowerbutton" *ngIf="show" (click)="showHide()">
+        <div class="icon">
+          
+        </div>
+  
+        <div class="closebutton">
+          <button (click)="addNote()">Close</button>
+        </div>
+      </div>
+    </div>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+  </div>
+  
