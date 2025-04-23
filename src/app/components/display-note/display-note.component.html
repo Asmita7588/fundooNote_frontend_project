@@ -1,0 +1,37 @@
+
+<div class="a">
+    <div
+      class="container"
+      *ngFor="let note of childArray"
+      [style.background-color]="note.color"
+    >
+      <div class="contentbox">
+        <div>
+          <div class="content1" >{{ note.title }}</div>
+          <div class="content2">{{ note.description }}</div>
+        </div>
+        <div>
+          <img
+            class="icon"
+            src="assets/images/pin.svg"
+            alt=""
+            width="20px"
+            height="20px"
+          />
+        </div>
+      </div>
+  
+      <div id="datepicker">
+        {{ note.reminder | date : "medium" }}
+      </div>
+  
+      <div class="icon">
+        <app-icon
+          [isIcon]="note"
+          (messageToDisplay)="receivemessageToDisplay($event)"
+        >
+        </app-icon>
+      </div>
+    </div>
+  </div>
+  

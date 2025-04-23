@@ -13,6 +13,7 @@ export class CreateNoteComponent {
   @Output() messageCreateToDisplay =new EventEmitter<string>();
   constructor(private noteService : NotesService){}
   ngOnInit(){}
+  
 
   showHide(){
     this.show =  true;

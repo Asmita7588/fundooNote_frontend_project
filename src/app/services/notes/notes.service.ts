@@ -15,16 +15,44 @@ export class NotesService {
    createNote(data :any){
     this.token = localStorage.getItem('authToken');
     console.log(this.token);
-    let http = {
-      headers : new HttpHeaders({
-        'Content-type' : 'application/json',
-        Authorization: this.token,
+    let httpOption = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        Authorization: `Bearer ${this.token}`,
       }),
     };
     return this.httpService.postApi(
       '/api/notes/createNote',
-      data
+      data,
+      httpOption.headers 
     );
+
+  
    }
+   getAllNote() {
+    let httpOption = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        Authorization: `Bearer ${this.token}`,
+      }),
+    };
+    return this.httpService.getApi('/api/notes/gellAllNotes' ,httpOption.headers  
+    );
+  }
+
+   updatecolor(data:any){
+    let httpOption ={
+      headers : new HttpHeaders({
+        'Content-type':'application/json',
+        Authorization: `Bearer ${this.token}`,
+
+      })
+    }
+    return this.httpService.putApi(
+      '/api/notes/addColorNote',
+      data,
+      httpOption.headers
+    )
+  }
 
 }

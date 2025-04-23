@@ -1,0 +1,48 @@
+
+
+<div class="icon">
+  
+    <div>
+      <img [matMenuTriggerFor]="color" src="assets/images/palette.svg" />
+      <mat-menu #color="matMenu">
+        <div class="colour">
+          <div *ngFor="let color of colors" class="colors">
+            <button
+              mat-mini-fab
+              [style.background-color]="color?.code"
+              (click)="NoteColorChange(color.code)"
+            ></button>
+          </div>
+        </div>
+      </mat-menu>
+    </div>
+    <div   >
+        <img  src="assets/images/add_alert.svg" />
+
+    </div>
+    <div>
+        <img src="assets/images/person_add.svg" />
+      </div>
+  
+    <div>
+      <img src="assets/images/images.svg" />
+    </div>
+    <div>
+      <img src="assets/images/archive.svg" />
+      <div>
+      </div>
+    </div>
+    <div>
+      <img [matMenuTriggerFor]="menu" src="assets/images/more.svg" alt="" />
+  
+      <mat-menu #menu>
+        <button mat-menu-item>Delete note</button>
+        <button mat-menu-item>Add label</button>
+        <button mat-menu-item>Add drawing</button>
+        <button mat-menu-item>Make a copy</button>
+        <button mat-menu-item>Show tick boxes</button>
+      </mat-menu>
+    </div>
+  </div>
+  <div></div>
+  

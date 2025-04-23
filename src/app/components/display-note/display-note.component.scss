@@ -1,0 +1,89 @@
+*{
+    box-sizing: border-box;  
+    }
+    
+    
+    // .container {
+    //   min-height: auto;
+    //   max-height: 400px;
+    //   flex-wrap: wrap;
+    //   width: 250px;
+    //   height: fit-content;
+    //   border: 1px solid rgb(201, 197, 197);
+    //   padding: 9px;
+    //   margin-left: 30px;
+    //   border-radius: 10px;
+    //   margin-top: 20px;
+    //   box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302),
+    //     0 2px 6px 2px rgba(60, 64, 67, 0.149);
+    //   line-height: 5px;
+    //   box-sizing: border-box;
+    //   word-break: break-all;
+    //   overflow: hidden;
+      
+    // }
+
+    .container {
+      min-height: auto;
+      max-height: 400px; /* Optional: Limits the maximum height */
+      flex-wrap: wrap;
+      width: 250px;
+      height: auto; /* Allow height to adjust based on content */
+      border: 1px solid rgb(201, 197, 197);
+      padding: 9px;
+      margin-left: 30px;
+      border-radius: 10px;
+      margin-top: 20px;
+      box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302),
+        0 2px 6px 2px rgba(60, 64, 67, 0.149);
+      line-height: 5px;
+      box-sizing: border-box;
+      word-break: break-word; /* Use break-word instead of break-all to handle long text gracefully */
+      overflow: hidden;
+    }
+    
+    .icon{
+      visibility: hidden;
+    }
+    .container:hover .icon{
+    visibility: visible;  
+    }
+    .a {
+      display: flex;
+      // padding-left: 30px;
+      height: fit-content;
+      word-break: break-all;
+      flex-wrap: wrap;
+      gap: 10px;
+      
+    }
+    .content1 {
+      width: 100%;
+      line-height: 4px;
+      font-weight: 500;
+      padding-bottom: 10px;
+    
+    }
+    .content2{
+      width: fit-content;
+       line-height: 18px;
+    }
+    
+    .contentbox{
+      display:flex ;
+      justify-content: space-between;
+      
+    }
+    
+    #datepicker{
+      margin-top: 10px;
+    
+    }
+    
+    @media screen and (max-width: 600px) {
+      .container {
+        width: 300px;
+        margin-left: 1%;
+      }
+    }
+    

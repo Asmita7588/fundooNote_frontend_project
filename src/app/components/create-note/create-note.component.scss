@@ -1,9 +1,16 @@
 .a {
     display: flex;
-    margin-left: 20%;
+    margin-left: 27%;
     margin-top: 35px;
-    
+     flex-shrink: revert-layer;
+     margin: 1,1,1,1;
+     width: 50%; 
+
   }
+
+
+    
+  
   .container {
     width: 550px;
     min-height: auto;
@@ -19,8 +26,10 @@
     width: 100%;
   }
   .subcontainer1 {
+    
     // margin-top: 10px;
     margin-left: 5px;
+    
   }
   .subcontainer2 {
     // margin-top: 10px;
@@ -31,7 +40,7 @@
     float: right;
   }
   #title{
-  font-weight: 600;
+  font-weight: 70;
   color: rgb(75, 73, 73);
   
   }

@@ -6,6 +6,7 @@
   bottom: 0;
   left: 0;
   right: 0;
+  background-color: #ddd;
 }
 
  ::ng-deep .mat-mdc-list-item-interactive :focus{
@@ -31,7 +32,15 @@ mat-drawer-backdrop.mat-drawer-shown {
   visibility: visible;
   /* background-color: var(--mat-sidenav-scrim-color); */
 }
-
+.mat-drawer-inner-container {
+  display: flex
+;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  position: fixed;
+}
 h1.example-app-name {
   margin: 5px;
   color: rgb(75, 73, 73);
@@ -48,13 +57,22 @@ img {
   background-color: white;
 }
 
+#spaces{
+  margin-left: 20px;
+}
+
 .example-sidenav-container {
+  
   flex: 1;
   border: solid rgb(231, 231, 231) 2px;
+  
+ 
 }
 
 .example-is-mobile .example-sidenav-container {
   flex: 1 0 auto;
+
+
 }
 
 mat-mdc-button-touch-target {
@@ -65,12 +83,19 @@ mat-mdc-button-touch-target {
   color: black;
 }
 .material-symbols-outlined {
-  color: rgb(218, 210, 210);
+  color: rgb(79 73 73);
 
   padding-right: 30px;
 
   flex-direction: row;
   flex-wrap: wrap;
+}
+
+::ngdeep .mat-drawer-backdrop.mat-drawer-shown {
+ 
+  visibility: visible;
+  margin-left: 251px;
+  background-color: white;
 }
 
 #toolbarlogo {
@@ -140,6 +165,15 @@ mat-nav-list {
   border-bottom-right-radius: 50px;
   border-top-right-radius: 50px;
 }
+
+// ::ng-deep .mat-drawer-inner-container {
+//   width: 100%;
+//   height: 100%;
+//   overflow: auto;
+//   -webkit-overflow-scrolling: touch;
+//   background-color: white;
+//   position: fixed;
+// }
 
 // ::ng-deep .mat-mdc-list-item-interactive {
 // }
@@ -212,3 +246,51 @@ mat-nav-list {
     display: none;
   }
 }
+
+
+
+
+.logout-dropdown {
+  position: relative;
+  display: inline-block;
+
+  .dropdown-toggle {
+    font-size: 28px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 6px;
+    transition: background 0.2s ease;
+
+    &:hover {
+      background-color: #f0f0f0;
+    }
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    right: 0;
+    margin-top: 8px;
+    background: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    border-radius: 4px;
+    min-width: 120px;
+
+    .dropdown-item {
+      display: block;
+      padding: 10px 16px;
+      width: 100%;
+      text-align: left;
+      background: none;
+      border: none;
+      font-size: 15px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #353ac1;
+      }
+    }
+  }
+}
+

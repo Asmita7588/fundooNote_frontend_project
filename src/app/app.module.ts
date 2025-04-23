@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule, routingComponenets } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegistrationComponent } from './components/registration/registration.component';
@@ -21,6 +20,12 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CreateNoteComponent } from './components/create-note/create-note.component';
+import { IconComponent } from './components/icon/icon.component';
+import {MatMenuModule} from '@angular/material/menu';
+import { DisplayNoteComponent } from './components/display-note/display-note.component';
+import { AppRoutingModule } from './app-routing.module';
+import { SignInComponent } from './components/sign-in/sign-in.component';
+import { GetAllNoteComponent } from './components/get-all-note/get-all-note.component';
 
 
 
@@ -28,9 +33,13 @@ import { CreateNoteComponent } from './components/create-note/create-note.compon
 @NgModule({
   declarations: [
     AppComponent,
-    routingComponenets,
     DashboardComponent,
-    CreateNoteComponent
+    CreateNoteComponent,
+    IconComponent,
+    DisplayNoteComponent,
+    RegistrationComponent,
+    SignInComponent,
+    GetAllNoteComponent
   ],
   imports: [
     BrowserModule,
@@ -52,6 +61,7 @@ import { CreateNoteComponent } from './components/create-note/create-note.compon
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
+    MatMenuModule,
   
     
   ],
