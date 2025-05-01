@@ -63,6 +63,7 @@ collaboratorsByNoteId: { [noteId: number]: any[] } = {};
     const data = {
       CollaboratorId: collaboratorId
     };
+    
   
     this.noteService.removeCollaborator(data).subscribe(
       () => {
