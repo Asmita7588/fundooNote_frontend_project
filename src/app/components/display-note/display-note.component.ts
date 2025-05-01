@@ -75,6 +75,7 @@ collaboratorsByNoteId: { [noteId: number]: any[] } = {};
         console.error(`Error removing collaborator with ID ${collaboratorId}:`, error);
       }
     );
+    
   }
   
   
