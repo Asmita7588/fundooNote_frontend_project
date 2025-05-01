@@ -1,0 +1,84 @@
+.DailogContainer {
+    width: 500px;
+    padding: 10px;
+    border-radius: 5px;
+   box-shadow:  rgba(60, 64, 67, 0.302),
+      rgba(60, 64, 67, 0.149);
+   }
+  .DailogContainer input {
+    // width: 8%;
+    outline: none;
+    border: none;
+    padding: 10px;
+  }
+  .IconButton {
+    // width: 100%;
+    // height: 60px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    
+  }
+  button {
+    background-color: white;
+    outline: none;
+    border: none;
+    font-size: medium;
+    font-weight: 500;
+  }
+  #icon1{
+    width: 70%;
+  }
+  #icon2{
+    margin-top: 20px;
+    
+  
+  }
+  @media only screen and (max-width: 600px) {
+    *{
+      margin: 0%;
+      padding: 0%;
+  
+    }
+    .DailogContainer{
+     width: 100%;
+    }
+    // input{
+    //   width: 200px;
+    // }
+  
+    .IconButton{
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+  
+    #icon1{
+      width: 65%;
+    }
+    #icon2{
+      width: 30%;
+    }
+    
+  }
+
+  *{
+    cursor: pointer;
+  }
+
+
+  .loader {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  

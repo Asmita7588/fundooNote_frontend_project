@@ -2,6 +2,18 @@
 
 <div class="icon">
   
+
+  <ng-container *ngIf="isIcon.isTrash; else normalIcons">
+    
+    <div >
+      <img src="assets/images/delete_forever.svg" (click)="deleteForeverNote()" class="pointer" />
+  
+    
+      <img id="delete" src="assets/images/Delete.svg" (click)="updateTrashNote()" class="pointer" />
+    </div>
+  </ng-container>
+
+  <ng-template #normalIcons>
     <div>
       <img [matMenuTriggerFor]="color" src="assets/images/palette.svg" />
       <mat-menu #color="matMenu">
@@ -10,39 +22,138 @@
             <button
               mat-mini-fab
               [style.background-color]="color?.code"
-              (click)="NoteColorChange(color.code)"
+              (click) = "updateColourNote(color.code)"
             ></button>
           </div>
         </div>
       </mat-menu>
     </div>
-    <div   >
-        <img  src="assets/images/add_alert.svg" />
+     <div class="setRem">
+    <img [matMenuTriggerFor]="rem" src="assets/images/add_alert.svg" class="Reminder"/>
+    <mat-menu #rem="matMenu">
+      <p class="Select1"> Reminder:</p>
+        <div class="Select">
+        Select date and time:
+          <input style="display: none;" [(ngModel)]="date" matInput [matDatepicker]="datepicker">
+          <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
+          <mat-datepicker #datepicker>
+            <mat-datepicker-actions>
+              <button mat-button matDatepickerCancel>Cancel</button>
+              <button mat-raised-button color="primary" matDatepickerApply (click)=" setReminder()" >Apply</button>
+            </mat-datepicker-actions>
+          </mat-datepicker>
+        </div>
+      
+    </mat-menu>
 
-    </div>
-    <div>
-        <img src="assets/images/person_add.svg" />
+  </div>
+
+
+    <!-- <div>
+        <img src="assets/images/person_add.svg" (click)="openCollaboratorsDialog()"/>
+      </div> -->
+      <div>
+       
+        <img [matMenuTriggerFor]="collabMenu"  src="assets/images/person_add.svg" />
+        
+        <mat-menu #collabMenu="matMenu" class="p-4"  (click)="$event.stopPropagation()">
+          <h4> Add Collaborators:</h4>
+          <div (click)="$event.stopPropagation()" style="padding: 10px; max-width: 100%; width: 300px; box-sizing: border-box;">
+
+
+            <mat-form-field appearance="outline" class="w-full">
+              <mat-label>Email</mat-label>
+              <input 
+                matInput 
+                [(ngModel)]="newEmail"
+                (click)="$event.stopPropagation()" 
+                (keyup.enter)="addCollaborator()" 
+              />
+            </mat-form-field>
+      
+            <button mat-button (click)="addCollaborator()">Add</button>
+      
+            <div *ngFor="let collab of collaborators" class="flex justify-between items-center mt-2">
+              {{ collab }}
+              <button mat-icon-button (click)="removeCollaborator(collab)">
+                <mat-icon>person</mat-icon>
+              </button>
+            </div>
+            <button mat-stroked-button color="primary" class="mt-3" (click)="onSave()">Save</button>
+            
+          </div>
+        </mat-menu>
       </div>
-  
+      
     <div>
       <img src="assets/images/images.svg" />
     </div>
-    <div>
-      <img src="assets/images/archive.svg" />
-      <div>
-      </div>
+     <div>
+      <img 
+        *ngIf="!isIcon?.isArchive; else unarchiveIcon" 
+        src="assets/images/archive.svg" 
+        (click)="updateArchiveNote()"
+      />
+      <ng-template #unarchiveIcon>
+        <img 
+          src="assets/images/unarchive.svg" 
+          
+          (click)="updateArchiveNote()"
+        />
+      </ng-template>
     </div>
     <div>
       <img [matMenuTriggerFor]="menu" src="assets/images/more.svg" alt="" />
-  
       <mat-menu #menu>
-        <button mat-menu-item>Delete note</button>
-        <button mat-menu-item>Add label</button>
+        <button mat-menu-item (click)="updateTrashNote()">Delete note</button>
+       
+
+        <button mat-menu-item [matMenuTriggerFor]="addLabelMenu">
+          Add Label
+        </button>
+
         <button mat-menu-item>Add drawing</button>
         <button mat-menu-item>Make a copy</button>
         <button mat-menu-item>Show tick boxes</button>
       </mat-menu>
     </div>
+    <mat-menu #addLabelMenu="matMenu" class="label-menu" [overlapTrigger]="false">
+      <ng-template matMenuContent>
+        <div class="label-container" (click)="$event.stopPropagation()">
+         
+          <mat-form-field appearance="outline" class="label-input">
+            <mat-label>New Label</mat-label>
+            <input
+              matInput
+              [(ngModel)]="newLabel"
+              (click)="$event.stopPropagation()"
+              (keyup.enter)="addLabel()"
+            />
+          </mat-form-field>
+    
+          <!-- Add Button -->
+          <button mat-flat-button color="primary" class="add-button" (click)="addLabel()">
+            Add
+          </button>
+    
+          <!-- Existing Labels -->
+          <div class="existing-labels" *ngIf="labelList.length > 0">
+            <h5>Existing Labels:</h5>
+            <div *ngFor="let label of labelList" class="label-item">
+              <mat-icon>label</mat-icon>
+              <span>{{ label }}</span>
+            </div>
+          </div>
+    
+        </div>
+      </ng-template>
+    </mat-menu>
+  </ng-template>
+ 
+  
   </div>
-  <div></div>
+ 
+
+
+ 
   

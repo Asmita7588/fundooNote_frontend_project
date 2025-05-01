@@ -39,12 +39,15 @@
         </span>
       </div>
       <div *ngIf="show" class="subcontainer1">
-        <input
-          class="subcontainer2"
-          type="text"
-          [(ngModel)]="note"
-          placeholder="Take a note..."
-        />
+       
+
+        <textarea
+  class="subcontainer2"
+  [(ngModel)]="note"
+  placeholder="Take a note..."
+  rows="4"
+></textarea>
+
       </div>
       <div class="lowerbutton" *ngIf="show" (click)="showHide()">
         <div class="icon">

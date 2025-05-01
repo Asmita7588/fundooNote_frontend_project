@@ -26,6 +26,15 @@ import { DisplayNoteComponent } from './components/display-note/display-note.com
 import { AppRoutingModule } from './app-routing.module';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { GetAllNoteComponent } from './components/get-all-note/get-all-note.component';
+import { ArchiveNoteComponent } from './components/archive-note/archive-note.component';
+import { TrashNoteComponent } from './components/trash-note/trash-note.component';
+import { UpdateNoteComponent } from './components/update-note/update-note.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ReminderComponent } from './components/reminder/reminder.component';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatTooltipModule } from '@angular/material/tooltip';
+
+
 
 
 
@@ -39,7 +48,13 @@ import { GetAllNoteComponent } from './components/get-all-note/get-all-note.comp
     DisplayNoteComponent,
     RegistrationComponent,
     SignInComponent,
-    GetAllNoteComponent
+    GetAllNoteComponent,
+    ArchiveNoteComponent,
+    TrashNoteComponent,
+    UpdateNoteComponent,
+    ReminderComponent,
+    
+    
   ],
   imports: [
     BrowserModule,
@@ -62,8 +77,11 @@ import { GetAllNoteComponent } from './components/get-all-note/get-all-note.comp
     MatSidenavModule,
     MatListModule,
     MatMenuModule,
-  
+    MatDialogModule,
+    MatChipsModule,
+    MatTooltipModule,
     
+  
   ],
   providers: [],
   bootstrap: [AppComponent]
