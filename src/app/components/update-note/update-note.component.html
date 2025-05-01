@@ -1,0 +1,21 @@
+
+<div class="DailogContainer" [style.background-color]="color">
+    <div class="DailogInput" [style.background-color]="color" >
+      <input type="text" [(ngModel)]="title" [style.background-color]="color"/>
+    </div>
+    <div class="DailogInput">
+      <input type="text" [(ngModel)]="description" [style.background-color]="color"/>
+    </div>
+    <div class="IconButton" >
+      <div id="icon1">
+        <app-icon [isIcon]="data" (messageTrashToDisplay)="receivemessageUpdateToDisplay($event)" ></app-icon>
+      </div>
+      <div id="icon2">
+        <button (click)="updateNote()" [style.background-color]="color"  >Close</button>
+      </div>
+    </div>
+  </div>
+
+  
+  
+  

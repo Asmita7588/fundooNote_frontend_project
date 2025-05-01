@@ -1,27 +1,44 @@
-<div class="example-container" [class.example-is-mobile] = "mobileQuery.matches">
+ <div class="example-container" [class.example-is-mobile] = "mobileQuery.matches">
   <mat-toolbar color="primary" class="example-toolbar">
     <button mat-icon-button (click)="snav.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
     <img
+    *ngIf="headerTitle === 'Keep'"
       src="https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png"
     />
-    <h1 class="example-app-name">Keep</h1>
-    <a href="" id="searchicon"><img src="assets/images/search.svg" /></a>
-    <input type="text" class="search" placeholder="Search" />
+    <h1 class="example-app-name">{{ headerTitle }}</h1>
+    <!-- <a href="" id="searchicon"><img src="assets/images/search.svg" /></a>
+    <input type="text" class="search" placeholder="Search" [(ngModel)]="searchText"(input)="onSearch()"/> -->
+    
+    <a href="" id="searchicon" *ngIf="!isSearchActive">
+      <img src="assets/images/search.svg" />
+    </a>
+    <input type="text" class="search" placeholder="Search" 
+           [(ngModel)]="searchText" (input)="onSearch()" 
+            />
+    
+
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
     />
     <div id="toolbarlogo">
       <span class="material-symbols-outlined"> refresh </span>
-      <span class="material-symbols-outlined"> grid_view </span>
+
+      <!-- <span class="material-symbols-outlined"> grid_view </span> -->
+      <span 
+      class="material-symbols-outlined toggle-icon" 
+      (click)="toggleView()">
+      {{ isGridView ? 'view_agenda' : 'grid_view' }}
+    </span>
+  
       <span class="material-symbols-outlined"> settings </span>
       <span id = "spaces" class="material-symbols-outlined"> apps </span>
       <!-- <span class="material-symbols-outlined"> account_circle </span> -->
       <div class="logout-dropdown">
         <span
-          class="material-symbols-outlined"
+          class="material-symbols-outlined dropdown-toggle"
           (click)="toggleDropdown()"
         >
           account_circle
@@ -52,6 +69,10 @@
           <img class="toolIcon" src="assets/images/Reminders.svg" />
           <span  *ngIf="isSidenavOpen" class="iconName">Reminders</span>
         </a>
+        <a mat-list-item *ngFor="let label of labels">
+         <mat-icon>label</mat-icon>
+        <span *ngIf="isSidenavOpen" class="iconName">{{ label }}</span>
+         </a>
         <a mat-list-item  routerLink ="/dashboard/notes">
           <img class="toolIcon" src="assets/images/Edit_labels.svg" />
           <span  *ngIf="isSidenavOpen" class="iconName">Edit labels</span>
@@ -71,6 +92,8 @@
     </mat-sidenav-content>
 
   </mat-sidenav-container>
+
+
 </div>
 
 
@@ -81,3 +104,8 @@
 
 
 
+
+ 
+
+
+ 

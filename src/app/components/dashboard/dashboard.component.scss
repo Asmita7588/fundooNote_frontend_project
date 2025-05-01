@@ -99,12 +99,14 @@ mat-mdc-button-touch-target {
 }
 
 #toolbarlogo {
-  margin-left: 40px;
+  margin-left: 200px;
   margin-top: 10px;
 }
 .toolIcon {
-  width: 25px;
+  // width: 25px;
   color: rgb(75, 73, 73);
+  width: 24px;
+  height: 24px;
 }
 .mat-drawer-backdrop{
   visibility: visible;
@@ -144,14 +146,16 @@ mat-nav-list {
   margin-left: 70px;
   margin-top: 10px;
   width: 20px;
-  background-color: rgb(246, 244, 244);
+  background-color: rgb(244, 246, 246);
   padding-right: 10px;
   padding-left: 10px;
+  padding: 3px;
 }
 .search {
   border: transparent;
-  width: 600px;
+  width: 1000px;
   height: 45px;
+  padding: 3px;
   background-color: white;
   outline: none;
   border-top-right-radius: 10px;
@@ -166,17 +170,13 @@ mat-nav-list {
   border-top-right-radius: 50px;
 }
 
-// ::ng-deep .mat-drawer-inner-container {
-//   width: 100%;
-//   height: 100%;
-//   overflow: auto;
-//   -webkit-overflow-scrolling: touch;
-//   background-color: white;
-//   position: fixed;
-// }
 
-// ::ng-deep .mat-mdc-list-item-interactive {
-// }
+::ng-deep .mat-mdc-list-item-interactive:focus {
+  background-color: orange;
+  opacity: 0.5;
+  border-bottom-right-radius: 50px;
+  border-top-right-radius: 50px;
+}
 ::ng-deep.mat-mdc-list-item-interactive:not(:focus):not(
     .mdc-list-item--disabled
   ):hover::before {
@@ -293,4 +293,51 @@ mat-nav-list {
     }
   }
 }
+
+*{
+  cursor: pointer;
+}
+
+.sidenav-content {
+  padding: 16px;
+}
+
+.sidenav-content h3 {
+  margin-bottom: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #5f6368;
+}
+
+mat-list-item {
+  padding: 8px 0;
+  font-size: 14px;
+  color: #3c4043;
+  cursor: pointer;
+}
+
+mat-list-item:hover {
+  background-color: #f1f3f4;
+  border-radius: 8px;
+}
+
+mat-list-item mat-icon {
+  margin-right: 12px;
+  color: #5f6368;
+}
+
+.label-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+  color: #3c4043;
+  font-size: 14px;
+}
+
+// .toggle-icon {
+//   cursor: pointer;
+//   font-size: 30px;
+//   color: white;
+// }
 

@@ -1,14 +1,14 @@
 
-<div class="a">
+<div class="a" [ngClass]="isGridView ? 'grid-view' : 'list-view'">
     <div
       class="container"
       *ngFor="let note of childArray"
       [style.background-color]="note.color"
     >
-      <div class="contentbox">
+     <div class="contentbox">
         <div>
-          <div class="content1" >{{ note.title }}</div>
-          <div class="content2">{{ note.description }}</div>
+          <div class="content1"(click)="updateNote(note)" >{{ note.title }}</div>
+          <div class="content2" (click)="updateNote(note)">{{ note.description }}</div>
         </div>
         <div>
           <img
@@ -24,13 +24,33 @@
       <div id="datepicker">
         {{ note.reminder | date : "medium" }}
       </div>
+      
+
+   <div *ngIf="collaboratorsByNoteId[note.noteId]">
+    <div *ngFor="let collab of collaboratorsByNoteId[note.noteId]" class="flex justify-between items-center mt-2">
+      {{ collab.email}}
+      <button mat-icon-button
+        (click)="removeCollaborator(note.noteId, collab.collaboratorId)"
+        matTooltip="Cancel"
+        matTooltipPosition="above">
+  <mat-icon>person</mat-icon>
+</button>
+
+
+    </div>
+  </div>
+  
   
       <div class="icon">
         <app-icon
           [isIcon]="note"
           (messageToDisplay)="receivemessageToDisplay($event)"
+          (messageToGetAllNote)="receivemessageToDisplay($event)"
         >
+
+
         </app-icon>
+       
       </div>
     </div>
   </div>

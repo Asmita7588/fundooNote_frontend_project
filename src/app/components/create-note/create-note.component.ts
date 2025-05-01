@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { NotesService } from 'src/app/services/notes/notes.service';
 
 @Component({
@@ -10,6 +11,7 @@ export class CreateNoteComponent {
   title: any;
   note : any;
   show : boolean = false;
+  
   @Output() messageCreateToDisplay =new EventEmitter<string>();
   constructor(private noteService : NotesService){}
   ngOnInit(){}
@@ -31,6 +33,10 @@ export class CreateNoteComponent {
       console.log('create all notes', response);
       this.messageCreateToDisplay.emit(response);
     });
+    
+    
+    this.title = '';
+    this.note = '';
   }
 
 }

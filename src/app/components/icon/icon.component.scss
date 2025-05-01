@@ -14,6 +14,7 @@
     border-radius: 10px;
     box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302),
       0 2px 6px 2px rgba(60, 64, 67, 0.149);
+     
   }
   .colour{
     height: 130px;
@@ -33,4 +34,130 @@
   padding: 3px;
   // border: 0px solid red;
   }
+
+.Select {
+    margin: 4px;
+    padding: 8px 0;
+    list-style-type: none;
+    margin-left: 7px;
+}
+
+.Select1 {
+  margin: 4px;
+  padding: 8px 0;
+  list-style-type: none;
+  margin-left: 7px;
+  height: 2px;
+}
+.pointer{
+  margin-left:5px;
+}
+
+#delete{
+  margin-left: 25px;
+}
   
+*{
+  cursor: pointer;
+}
+
+
+::ng-deep .mat-menu-panel {
+  padding: 16px;
+  min-width: 300px;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.collab-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.collab-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.collab-list-item:last-child {
+  border-bottom: none;
+}
+
+.collab-input-field {
+  width: 100%;
+}
+
+.collab-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.person-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 30%;
+  object-fit: cover;
+  background-color: black;
+  border: 1px solid #5e5858;
+  padding: 2px;
+}
+
+ h4 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  font-family: Roboto, sans-serif;
+  letter-spacing: .03125em;
+  margin: 0 16px;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.label-menu {
+  max-width: 300px;
+  overflow-x: hidden !important;
+}
+
+.label-container {
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-sizing: border-box;
+}
+
+.label-input {
+  width: 100%;
+}
+
+.add-button {
+  align-self: flex-end;
+  margin-top: -5px;
+}
+
+.existing-labels {
+  margin-top: 10px;
+  border-top: 1px solid #ccc;
+  padding-top: 8px;
+}
+
+.label-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 0;
+  font-size: 14px;
+}
+
+
+
